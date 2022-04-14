@@ -1,0 +1,31 @@
+{
+	"name": "harvard-of-queens-wordle",
+	"version": "1.0.0",
+	"description": "Wordle clone using words related to St. John's University",
+	"main": "index.js",
+	"scripts": {
+		"build": "webpack --config webpack.config.js --mode production",
+		"develop": "webpack --watch",
+		"delete:node_modules": "rimraf node_modules/",
+		"delete:dist": "rimraf dist/",
+		"set-env:harvard-of-queens": "powershell copy .\\src\\environments\\harvard-of-queens.json .\\src\\environments\\current-env.json",
+		"set-env:milk": "powershell copy .\\src\\environments\\milk.json .\\src\\environments\\current-env.json",
+		"set-env:dev": "powershell copy .\\src\\environments\\dev.json .\\src\\environments\\current-env.json"
+	},
+	"author": "James Worden",
+	"license": "ISC",
+	"devDependencies": {
+		"@types/node": "7.0.0",
+		"css-loader": "^5.1.1",
+		"html-webpack-partials-plugin": "^0.8.0",
+		"html-webpack-plugin": "^4.0.0",
+		"mini-css-extract-plugin": "^0.9.0",
+		"rimraf": "^3.0.2",
+		"ts-loader": "^8.2.0",
+		"tslint": "5.17.0",
+		"tslint-loader": "3.6.0",
+		"typescript": "^4.6.3",
+		"webpack": "^4.40.2",
+		"webpack-cli": "^3.0.8"
+	}
+}

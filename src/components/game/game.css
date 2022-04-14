@@ -1,0 +1,10 @@
+#game {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	height: calc(100% - var(--header-height) - 32px);
+	margin: 16px 0px;
+	max-height: 600px;
+	max-width: 850px;
+	margin: auto;
+}

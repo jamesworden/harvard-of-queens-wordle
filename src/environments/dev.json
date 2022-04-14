@@ -1,0 +1,10 @@
+{
+	"title": "Development",
+	"winMessage": "You won.",
+	"possibleAnswers": [
+		{
+			"word": "word",
+			"hint": "hint"
+		}
+	]
+}

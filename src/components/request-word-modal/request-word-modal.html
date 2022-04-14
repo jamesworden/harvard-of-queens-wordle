@@ -1,0 +1,28 @@
+<div id="request-word-modal-container">
+	<div id="request-word-modal">
+		<h1>Word Request</h1>
+		<p>You can't add words directly, but you can ask me to.</p>
+		<form id="request-word-form">
+			<label for="name">Name:</label>
+			<input type="text" id="name" name="name" class="modal-input" /><br /><br />
+			<label for="email">Email:</label>
+			<input type="email" id="email" name="email" class="modal-input" /><br /><br />
+			<label for="message">Word:</label>
+			<input type="text" id="message" name="message" maxlength="10" class="modal-input" />
+			<br />
+			<br />
+			<br />
+			<div id="request-word-modal-buttons-container">
+				<input type="submit" value="Submit" class="modal-button submit" />
+				<button
+					class="modal-button cancel"
+					id="request-word-modal-close-button"
+					type="button"
+				>
+					Cancel
+				</button>
+			</div>
+		</form>
+		<span id="request-word-response-text"></span>
+	</div>
+</div>
