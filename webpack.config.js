@@ -1,19 +1,12 @@
 const path = require('path');
 const ROOT = path.resolve(__dirname, 'src');
 const DESTINATION = path.resolve(__dirname, 'dist');
+const rimraf = require('rimraf');
 
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const HtmlWebpackPartialsPlugin = require('html-webpack-partials-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-
-const webpackPlugins = [
-	new MiniCssExtractPlugin({
-		filename: '[name].css',
-	}),
-	new HtmlWebpackPlugin({
-		template: 'index.html',
-	}),
-];
+const EventHooksPlugin = require('event-hooks-webpack-plugin');
 
 const htmlComponentNames = [
 	'board',
@@ -26,13 +19,12 @@ const htmlComponentNames = [
 	'toast-message',
 ];
 
-htmlComponentNames.map((name) => {
-	webpackPlugins.push(
-		new HtmlWebpackPartialsPlugin({
-			path: `./src/components/${name}/${name}.html`,
-			location: name, // Location property is the name of the created web component
-		})
-	);
+const htmlComponentPlugins = htmlComponentNames.map((name) => {
+	// Setting location to 'xyz' will allow us to write '<xyz></xyz>' as an HTML element.
+	return new HtmlWebpackPartialsPlugin({
+		path: `./src/components/${name}/${name}.html`,
+		location: name,
+	});
 });
 
 module.exports = {
@@ -48,7 +40,24 @@ module.exports = {
 		extensions: ['.ts', '.js'],
 		modules: [ROOT, 'node_modules'],
 	},
-	plugins: webpackPlugins,
+	plugins: [
+		new MiniCssExtractPlugin({
+			filename: '[name].css',
+		}),
+		new HtmlWebpackPlugin({
+			template: 'index.html',
+		}),
+		new EventHooksPlugin({
+			done: () => {
+				// Delete unnecessary webpack files
+				rimraf('./dist/utils/', () => {});
+				rimraf('./dist/environments/', () => {});
+				rimraf('./dist/components/', () => {});
+				rimraf('./dist/main.d.ts', () => {});
+			},
+		}),
+		...htmlComponentPlugins,
+	],
 	module: {
 		rules: [
 			{
@@ -66,5 +75,10 @@ module.exports = {
 			},
 			{ test: /\.ts$/, use: 'ts-loader' },
 		],
+	},
+	performance: {
+		hints: 'error',
+		maxEntrypointSize: 1280000, // 1.25 KB
+		maxAssetSize: 1280000,
 	},
 };

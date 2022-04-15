@@ -64,7 +64,7 @@ class RequestWordModal {
 			const body: { [key: string]: string } = {};
 
 			for (const input of this.formInputs) {
-				if (input.value.trim().length == 0) {
+				if (input.value.trim().length === 0) {
 					this.setResponseText(`Try filling out the ${input.name} field.`);
 					return;
 				}

@@ -105,7 +105,7 @@ class Game {
 		}
 
 		const letterRegex = new RegExp(/[a-zA-Z]/);
-		const keyIsLetter = letterRegex.test(key) && key.length == 1;
+		const keyIsLetter = letterRegex.test(key) && key.length === 1;
 
 		if (!keyIsLetter) {
 			return;

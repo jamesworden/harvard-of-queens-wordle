@@ -17,7 +17,7 @@ class Keyboard {
 
 	getKey(letter: string) {
 		for (const key of this.keys) {
-			if (key.textContent == letter) {
+			if (key.textContent === letter) {
 				return key;
 			}
 		}
@@ -45,7 +45,7 @@ class Keyboard {
 
 	initPhysicalEnter() {
 		document.addEventListener('keypress', ({ key }) => {
-			if (key == 'Enter') {
+			if (key === 'Enter') {
 				game.attemptGuess();
 			}
 		});
@@ -59,7 +59,7 @@ class Keyboard {
 
 	initPhysicalBackspace() {
 		document.addEventListener('keydown', ({ key }) => {
-			if (key == 'Backspace') {
+			if (key === 'Backspace') {
 				game.attemptBackspace();
 			}
 		});
@@ -88,7 +88,7 @@ class Keyboard {
 				return;
 			}
 
-			if (comparison.status == status) {
+			if (comparison.status === status) {
 				key.classList.add(status);
 			}
 		}

@@ -94,7 +94,7 @@ export class WordUtils {
 
 	static isValidGuess(guess: string) {
 		const guessIsPossibleAnswer = possibleAnswers.some(
-			(possibleAnswer) => possibleAnswer.word == guess
+			(possibleAnswer) => possibleAnswer.word === guess
 		);
 
 		if (guessIsPossibleAnswer) {
@@ -102,7 +102,7 @@ export class WordUtils {
 		}
 
 		const guessIsPossibleGuess = possibleGuesses.some(
-			(possibleGuess) => possibleGuess == guess
+			(possibleGuess) => possibleGuess === guess
 		);
 
 		if (guessIsPossibleGuess) {
