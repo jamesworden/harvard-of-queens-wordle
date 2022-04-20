@@ -46,7 +46,6 @@
 #board {
 	width: 100%;
 	margin: auto;
-	margin: 1rem 0;
 
 	/* CRITICAL: Webkit transform style fixes bug on safari. When the answer is revealed and the tiles
 	are flipped, webkit has a bug on safari where the z-index of the item being animated is ignored. To

@@ -128,7 +128,7 @@ class Board {
 
 		for (let tileIndex = 0; tileIndex < tiles.length; tileIndex++) {
 			const { status } = letterComparisons.find(
-				(letterComparison) => letterComparison.tileIndex == tileIndex
+				(letterComparison) => letterComparison.tileIndex === tileIndex
 			);
 
 			this.revealTileWithDelay(tileIndex, rowIndex, status);

@@ -44,7 +44,7 @@ Features to make:
 -   ~~Have at least one hint assocated with each word because it's super difficult to guess big words.~~
 -   Change the font family of the text within the modal; looks like generic bootstrap text but it's not.
 -   Create a share feature where all of the user's guesses are transformed into a text message they can send on mobile.
--   Style hint button so it looks like a button on a keyboard.
+-   ~~Style hint button so it looks like a button on a keyboard.~~
 
 ---
 
