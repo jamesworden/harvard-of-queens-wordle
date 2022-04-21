@@ -1,2 +1,2 @@
-import './board.css';
-export * from './board';
+import './board.css'
+export * from './board'

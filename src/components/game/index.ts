@@ -1,2 +1,2 @@
-import './game.css';
-export * from './game';
+import './game.css'
+export * from './game'

@@ -1,16 +1,16 @@
 :root {
-	--header-height: 50px;
+  --header-height: 50px;
 }
 
 html {
-	overflow: none;
+  overflow: none;
 }
 
 body {
-	height: 100%;
-	background-color: #ffffff;
-	margin: 0;
-	padding: 0;
-	overflow-y: hidden;
-	display: block;
+  height: 100%;
+  background-color: #ffffff;
+  margin: 0;
+  padding: 0;
+  overflow-y: hidden;
+  display: block;
 }

@@ -1,3 +1,3 @@
-import { game } from './components';
+import { game } from './components'
 
-game.init();
+game.init()
