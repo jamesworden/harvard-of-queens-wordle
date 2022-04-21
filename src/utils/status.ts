@@ -1,5 +1,5 @@
 export enum Status {
-	CORRECT = 'correct',
-	ELSEWHERE = 'elsewhere',
-	INCORRECT = 'incorrect',
+  CORRECT = 'correct',
+  ELSEWHERE = 'elsewhere',
+  INCORRECT = 'incorrect',
 }

@@ -1,2 +1,2 @@
-import './toast-message.css';
-export * from './toast-message';
+import './toast-message.css'
+export * from './toast-message'

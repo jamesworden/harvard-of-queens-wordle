@@ -1,10 +1,11 @@
 {
-	"title": "Development",
-	"winMessage": "You won.",
-	"possibleAnswers": [
-		{
-			"word": "word",
-			"hint": "hint"
-		}
-	]
+  "title": "Development",
+  "winMessage": "You won.",
+  "wordRequestLambdaEndpoint": "https://ex0av8epzj.execute-api.us-east-1.amazonaws.com/Production/",
+  "possibleAnswers": [
+    {
+      "word": "word",
+      "hint": "hint"
+    }
+  ]
 }

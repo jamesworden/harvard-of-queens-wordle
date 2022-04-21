@@ -1,2 +1,2 @@
-import './keyboard.css';
-export * from './keyboard';
+import './keyboard.css'
+export * from './keyboard'

@@ -1,2 +1,2 @@
-import './toolbar.css';
-export * from './toolbar';
+import './toolbar.css'
+export * from './toolbar'
