@@ -1,3 +1,7 @@
+import { env } from '../../environments'
+
+const { wordRequestLambdaEndpoint } = env
+
 class RequestWordModal {
   private readonly self = document.getElementById('request-word-modal')
   private readonly form = document.getElementById('request-word-form')
@@ -8,10 +12,6 @@ class RequestWordModal {
   private readonly closeButton = document.getElementById(
     'request-word-modal-close-button'
   )
-
-  // TODO: get from environment file
-  private readonly submitUrl =
-    'https://ex0av8epzj.execute-api.us-east-1.amazonaws.com/Production/'
 
   constructor() {
     this.initCloseButton()
@@ -62,7 +62,7 @@ class RequestWordModal {
     })
   }
 
-  // TODO: Break this function up (create XMLHttpRequest service?)
+  // TODO: Break this function up
   initFormSubmit() {
     this.form.onsubmit = event => {
       event.preventDefault()
@@ -87,7 +87,7 @@ class RequestWordModal {
 
       // Create the AJAX request
       var xhr = new XMLHttpRequest()
-      xhr.open('POST', this.submitUrl, true)
+      xhr.open('POST', wordRequestLambdaEndpoint, true)
       xhr.setRequestHeader('Accept', 'application/json; charset=utf-8')
       xhr.setRequestHeader('Content-Type', 'application/json; charset=UTF-8')
 
